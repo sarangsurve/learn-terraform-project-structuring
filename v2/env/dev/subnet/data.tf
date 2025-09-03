@@ -4,7 +4,3 @@ data "terraform_remote_state" "vpc" {
     path = "../vpc/terraform.tfstate"
   }
 }
-
-output "test" {
-  value = data.terraform_remote_state.vpc
-}
