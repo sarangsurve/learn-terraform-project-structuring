@@ -1,14 +1,14 @@
 provider "aws" {
-  region = "ap-south-1"
+  region = var.region
 }
 
 resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = var.cidr_block
   
   enable_dns_support = false
   enable_dns_hostnames = false
 
   tags = {
-    Name = "dev-main"
+    Name = "${var.env}-main"
   }
 }
